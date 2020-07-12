@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+    <div class="hello-form">
+        {{ render_form(form, action=request.full_path) }}
+    </div>
+    <h4> {{ messages|length }}  messages <!--共有 {{多少條}}messages   在網頁上: 5600 messages-->
+        <small class="float-right">
+            <a href="#bottom" title="Go Bottom">&darr;</a>
+            <!--href="#bottom"移至網頁底部 title="To Bottom"滑鼠一道時會出現提示  &darr;箭頭向下符號  -->
+        </small>
+    </h4>
+    <!--這個區塊 顯示留言訊息-->
+    <div class="list_group">  <!--https://getbootstrap.com/docs/4.0/components/list-group/-->
+        {% for message in messages %}
+            <!--以下請看bootstrap官方網頁說明-->
+            <a class="list-group-item list-group-item-action flex-column">  <!--flex-column區塊排列順序是垂直的，一條一條column顯示-->
+                <!--https://getbootstrap.com/docs/4.4/utilities/flex/#enable-flex-behaviors
+                https://getbootstrap.com/docs/4.0/utilities/sizing/-->
+                <!--<div class="d-flex w-100 justify-content-between ">-->
+                <!--d-flex製造一個顏色區塊 區塊顏色寬度100%  -->
+                <!--區塊第一行-->
+                <div class="d-flex w-100 justify-content-between"> <!--flex: 內容分散-->
+                    <h5 class="mb-1 text-primary">{{ message.name }}   <!--使用者名稱-->
+                    <small class="text-muted">
+                        #{{loop.revindex}}  <!-- #第幾個留言-->
+                        <!--https://twig.symfony.com/doc/3.x/tags/for.html-->
+                    </small>
+                    </h5>
+                    <!--data-toggle="tooltip"滑鼠移過去就出現一個標籤 data-placement="top"標籤位置在上面 data-delay="100"延遲100ms出現 
+                        https://getbootstrap.com/docs/4.0/components/tooltips/-->
+                    <!--在顯示相對時間的HTML元素中創建一個data-timestamp屬性存儲原始的時間戳，以便在JavaScript中獲取-->
+                    <small data-toggle="tooltip" data-placement="top" data-delay="100"
+                        data-timestamp="{{ message.timestamp.strftime('%H:%M %b,%d %Y') }}">  <!--(?)格式固定是 Jul 11, 2020 3:22-->
+                        <!--https://www.w3schools.com/php/func_date_strftime.asp-->
+                        {{ moment( message.timestamp ).fromNow( refresh=True )}}
+                        <!--moment().fromNow() https://momentjs.com/docs/#/displaying/-->
+                        <!--指定refresh 參數後，其內容會隨著時間的推移而更新。如果一直待在這個頁面，幾分鐘後，會看到顯示的文本變成“a minuteago”“2 minutes ago”等-->
+                    </small>
+                </div>
+                <!--區塊第一行結束-->
+
+                <p class="mb-1 text-dark">{{ message.body}}</p>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
