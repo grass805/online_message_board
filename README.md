@@ -11,28 +11,27 @@ website URL: http://ec2-54-168-200-241.ap-northeast-1.compute.amazonaws.com
 ## Deployment
 Amazon Linux AMI ec2-user
 
-1. create a project directory 
+
+1. download the codes or git clone
 ```bash
-~$ mkdir FOLDER
+~$ git clone git@github.com:grass805/online_message_board.git
+
+~$ cd online_message_board
 ```
 
 2. create a virtual environment (virtualenv) 
 ```bash
+# enter root shell
+~$ sudo su 
+
 # with python3
 ~$ virtualenv VIRT --python=python3
-
-# activate virtual environment
-~$ source VIRT/bin/activate
 ```
 
-3. download the codes or git clone
-```bash
-~$ git clone git@github.com:grass805/online_message_board.git
-```
 
 4. overall directory structure
 ```
-FOLDER
+online_message_board
 |--VIRT
 |--.flaskenv          # flask environment variables
 |--requirements.txt   # application dependencies
@@ -44,12 +43,20 @@ FOLDER
    
 ```
 
-5. install python packages
+5. activate virtual environment
+```bash
+# activate virtual environment
+~$ source VIRT/bin/activate
+```
+
+6. install python packages
 ```bash
 ~$ pip install -r requirements.txt
 ```
 
-6. deployment
+
+
+7. deployment
 ```bash
 ~$ cd msgboard
 ```
@@ -60,9 +67,6 @@ FOLDER
 ```
 
 ```bash
-# root shell
-~$ sudo su 
-
 # run the application on port 80
 ~$ flask run --host='0.0.0.0' --port=80
 ```
