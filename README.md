@@ -29,7 +29,7 @@ Amazon Linux AMI ec2-user
 ```
 
 
-4. overall directory structure
+3. overall directory structure
 ```
 online_message_board
 |--VIRT
@@ -43,20 +43,20 @@ online_message_board
    
 ```
 
-5. activate virtual environment
+4. activate virtual environment
 ```bash
 # activate virtual environment
 ~$ source VIRT/bin/activate
 ```
 
-6. install python packages
+5. install python packages
 ```bash
 ~$ pip install -r requirements.txt
 ```
 
 
 
-7. deployment
+6. deployment
 ```bash
 ~$ cd msgboard
 ```
