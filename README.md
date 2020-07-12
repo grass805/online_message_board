@@ -5,6 +5,7 @@ using flask framework to build an online message board and deploy to AWS-EC2
 
 ## Result
 website URL: http://ec2-54-168-200-241.ap-northeast-1.compute.amazonaws.com
+
 ![](https://github.com/grass805/online_message_board/blob/master/screeshot/screenshot1.jpg)
 
 ## Deployment
