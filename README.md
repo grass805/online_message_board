@@ -82,8 +82,8 @@ online_message_board
 ----------------------------------------------------------
 ## Reference
 
-《Flask Web 开发实战》
-https://github.com/greyli/sayhello
+李辉《Flask Web 开发实战》
+
 
 
 
