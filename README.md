@@ -11,7 +11,7 @@ website URL: http://ec2-54-168-200-241.ap-northeast-1.compute.amazonaws.com
 ## Deployment
 Amazon Linux AMI ec2-user
 
-1.create a project directory 
+1. create a project directory 
 ```bash
 ~$ mkdir FOLDER
 ```
