@@ -75,11 +75,16 @@ online_message_board
 *Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
 ```
 
-###
+
+## notice
 if you want to keep the connection,
+
 which means performing a long-running task on a remote machine,
+
 plz run the process in a Screen session.
+
 https://linuxize.com/post/how-to-use-linux-screen/
+
 
 
 
