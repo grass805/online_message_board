@@ -78,7 +78,9 @@ online_message_board
 
 ## notice
 if you want to keep the connection,
+
 which means performing a long-running task on a remote machine,
+
 plz run the process in a Screen session.
 
 https://linuxize.com/post/how-to-use-linux-screen/
