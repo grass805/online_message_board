@@ -67,12 +67,12 @@ online_message_board
 ```
 
 ```bash
-# run the application on port 80
-~$ flask run --host='0.0.0.0' --port=80
+# run the application on port 8080
+~$ flask run --host='0.0.0.0' --port=8080
 ```
 
 ```bash
-*Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+*Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 ```
 
 
